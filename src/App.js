@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {add} from './actions';
 
-function App() {
+import Header from './components/Header';
+import TotalCounter from './components/TotalCounter';
+import DataForm from './components/SubmitForm';
+import DataDisplay from './components/DataDisplay';
+
+export default function App() {
+  // const count = useSelector(state => state.test);
+  // const dispatch = useDispatch();
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-gray-200 min-h-screen">
+      <Header/>
+      <TotalCounter />
+      <DataForm />
+      <DataDisplay />
     </div>
-  );
+  )
 }
 
-export default App;
+
+// <button onClick={() => dispatch(add())}>click</button>
+// {count}
