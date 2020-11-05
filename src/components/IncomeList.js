@@ -7,7 +7,7 @@ export default function IncomeList() {
 
   const renderItems = incomes.map(income => {
     return (
-      <IncomeItem name={income.name} data={income.price} />
+      <IncomeItem name={income.name} data={income.price} time={income.time} />
     )
   })
 

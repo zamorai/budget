@@ -21,7 +21,7 @@ export default function IncomeItem(props) {
     <div onClick={handleDelete} className="flex justify-between bg-gray-200 py-2">
       <div className="flex flex-col items-start ml-8">
         <span className="text-xl">{props.name}</span>
-        <span className="text-xs text-gray-500">{moment().startOf('hour').fromNow()}</span>
+        <span className="text-xs text-gray-500">{props.time}</span>
       </div>
       <div className="flex flex-col items-center mr-8">
         <span className="text-xl">${props.data}</span>

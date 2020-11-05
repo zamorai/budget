@@ -7,7 +7,7 @@ export default function ExpenseList() {
 
   const renderItems = incomes.map(income => {
     return (
-      <ExpenseItem name={income.name} data={income.price} />
+      <ExpenseItem name={income.name} data={income.price} time={income.time} />
     )
   })
 
