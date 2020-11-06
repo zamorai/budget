@@ -1,19 +1,26 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import ExpenseList from './ExpenseList'
-import IncomeList from './IncomeList'
+import IncomeList from './IncomeList';
+import {amountFilter} from '../actions';
 
 export default function DataDisplay() {
-  const data = useSelector(state => state.income)
   const incomeMoney = useSelector(state => state.money.income)
   const expenseMoney = useSelector(state => state.money.expense)
 
+  const dispatch = useDispatch();
+
   return (
     <div className="flex flex-col justify-center items-center mt-8">
-      <div>
-        Filters
+      <div className="ml-6 flex w-3/4">
+        <img className="w-5 h-5 mr-6" src="./images/filter-outline.svg"/> 
+        <span>Filters</span>
+        <div>
+          <span className="cursor-pointer text-red-500">Date</span>
+          <span onClick={() => dispatch(amountFilter())} className="cursor-pointer text-blue-500">Amount</span>
+        </div>
       </div>
-      <div className="w-1/2 bg-gray-100 shadow grid grid-cols-2 divide-x divide-gray-300 mt-2">
+      <div className="w-3/4 bg-gray-100 shadow grid grid-cols-2 divide-x divide-gray-300 mt-2">
         <div className='mt-2'>
           <div className="flex justify-between">
             <span></span>

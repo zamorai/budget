@@ -70,3 +70,15 @@ export const subExpenseTotal = (value) => {
     payload: value
   }
 }
+
+export const dateFilter = () => {
+  return {
+    type: 'DATE_FILTER'
+  }
+}
+
+export const amountFilter = () => {
+  return{
+    type: 'AMOUNT_FILTER'
+  }
+}

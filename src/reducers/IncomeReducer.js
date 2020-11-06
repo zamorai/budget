@@ -10,12 +10,15 @@ export default (state = initalValues, action) => {
          return item.name === action.payload.name ? {...item, price: item.price + action.payload.price} : item
         })
       }
-
       return [...state, action.payload]
     case 'DELETE_ITEM':
       return state.filter(item => {
         return item.name !== action.payload
       })
+    case 'AMOUNT_FILTER':
+      let sortedState = [...state]
+      sortedState.sort(amountFilter)
+      return sortedState
     default:
       return state
   }
@@ -29,3 +32,14 @@ export default (state = initalValues, action) => {
 // name: "Amazon",
 // price: 3200
 // }
+
+function amountFilter(a,b) {
+  if (a.price > b.price) {
+    return -1
+  } 
+  if (a.price < b.price){ 
+    return 1
+  }
+
+  return 0
+}
