@@ -5,7 +5,7 @@ const initialValues = {
   expense: 0
 }
 
-export default (state = initialValues, action) => {
+const MoneyReducer = (state = initialValues, action) => {
   switch(action.type) {
     case "ADD":
       return {...state, total: state.total + action.payload}
@@ -23,3 +23,5 @@ export default (state = initialValues, action) => {
       return state
   }
 }
+
+export default MoneyReducer;

@@ -98,3 +98,14 @@
     transform: translateY(0);
   }
 }
+
+.custom-position_relative {
+  position: relative;
+}
+
+.custom-position{
+  position: absolute; 
+  bottom: -40%;
+  font-size: 0.75rem;
+  color: rgb(231, 109, 109);
+}

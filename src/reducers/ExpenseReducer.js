@@ -1,7 +1,7 @@
 const initalValues = []
 
 
-export default (state = initalValues, action) => {
+const ExpenseReducer = (state = initalValues, action) => {
 switch(action.type) {
   case 'ADD_EXPENSE':
     const existsInState = state.some(item => item.name === action.payload.name);
@@ -24,10 +24,10 @@ switch(action.type) {
 }
 }
 
-
+export default ExpenseReducer;
 
 function amountFilter(a,b) {
   if (a.price > b.price) {
     return -1
   } 
-}
+} 

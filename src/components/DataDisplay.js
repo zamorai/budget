@@ -13,7 +13,7 @@ export default function DataDisplay() {
   return (
     <div className="flex flex-col justify-center items-center mt-8">
       <div className="ml-6 flex items-center w-3/4">
-        <img className="w-5 h-5 mr-4" src="./images/filter-outline.svg"/> 
+        <img className="w-5 h-5 mr-4" src="./images/filter-outline.svg" alt="filter icon"/> 
         <span>Sort by:</span>
         <div className="ml-4">
           <span className="cursor-pointer text-gray-800">Date</span>

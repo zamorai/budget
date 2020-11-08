@@ -1,7 +1,7 @@
 const initalValues = []
 
 
-export default (state = initalValues, action) => {
+const IncomeReducer = (state = initalValues, action) => {
   switch(action.type) {
     case 'ADD_ITEM':
       const existsInState = state.some(item => item.name === action.payload.name);
@@ -23,6 +23,8 @@ export default (state = initalValues, action) => {
       return state
   }
 }
+
+export default IncomeReducer;
 
 // {
 //   name: "Uber",

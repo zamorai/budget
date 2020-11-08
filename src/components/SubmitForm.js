@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItem, add, sub, addExpense, addItemTotal, addExpenseTotal } from '../actions';
 import moment from 'moment';
 
@@ -13,11 +13,13 @@ export default function SubmitForm() {
 
   const handleFormValidation = (e) => {
     e.preventDefault()
-    if (description.length >=2 && value.length > 0 && value * 1 != NaN && parseInt(value) > 0) {
+    if (description.length >=2 && value.length > 0 && !isNaN(value*1) && parseInt(value) > 0) {
       handleFormSubmit(e)
       setWrongSubmit(false)
+    } else {
+      setWrongSubmit(true)
     }
-    setWrongSubmit(true)
+
 
   }
 
@@ -47,13 +49,15 @@ export default function SubmitForm() {
     <div className="flex justify-center items-center mt-12">
       <div>
         <form className="flex" onSubmit={handleFormValidation}>
-          <div className="flex flex-col">
+          <div className="flex flex-col custom-position_relative">
             <label className="mr-2">Add Item</label>
             <input value={description} onChange={(e) => setDescription(e.target.value)} className="mr-4 bg-gray-100 px-2 py-1 rounded placeholder-gray-500 placeholder-opacity-50 outline-none" placeholder="Item" type='text' />
+            {wrongSubmit ? <span className="custom-position">Enter at least two letters</span> : "" }
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col custom-position_relative">
             <label className="mr-2">Cost</label>
             <input value={value} onChange={(e) => setValue(e.target.value)} className="mr-4 bg-gray-100 px-2 py-1 rounded placeholder-gray-500 placeholder-opacity-50 outline-none" type='text' placeholder="Cost" />
+            {wrongSubmit ? <span className="custom-position">Enter a number</span> : "" }
           </div>
           <select className="px-4 py-1 outline-none self-end" onClick ={(e) => setSelection(e.target.value)} name="type">
             <option value ="+">+</option>

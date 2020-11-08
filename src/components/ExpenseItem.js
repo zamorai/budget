@@ -20,7 +20,7 @@ export default function IncomeItem(props) {
   return (
     <div className="flex justify-between bg-red-100 py-2">
       <div className="ml-6 flex items-center">
-        <img onClick={handleDelete} className="w-5 h-5 cursor-pointer" src="./images/close-outline.svg"  />
+        <img onClick={handleDelete} className="w-5 h-5 cursor-pointer" src="./images/close-outline.svg" alt="delete item icon" />
       </div>
       <div className="flex-grow flex flex-col items-start ml-4">
         <span className="text-xl">{props.name}</span>
