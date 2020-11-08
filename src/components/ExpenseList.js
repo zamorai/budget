@@ -3,16 +3,16 @@ import { useSelector } from 'react-redux';
 import ExpenseItem from './ExpenseItem';
 
 export default function ExpenseList() {
-  const incomes = useSelector(state => state.expense)
+  const expenses = useSelector(state => state.expense)
 
-  const renderItems = incomes.map(income => {
+  const renderItems = expenses.map(expense => {
     return (
-      <ExpenseItem name={income.name} data={income.price} time={income.time} />
+      <ExpenseItem key={expense.name} name={expense.name} data={expense.price} time={expense.time} />
     )
   })
 
   return (
-    <div className="divide-y divide-blue-100">
+    <div className="divide-y divide-gray-300">
       {renderItems}
     </div>
   )

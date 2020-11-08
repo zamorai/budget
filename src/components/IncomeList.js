@@ -7,12 +7,12 @@ export default function IncomeList() {
 
   const renderItems = incomes.map(income => {
     return (
-      <IncomeItem name={income.name} data={income.price} time={income.time} />
+      <IncomeItem key={income.name} name={income.name} data={income.price} time={income.time} />
     )
   })
 
   return (
-    <div className="divide-y divide-blue-100">
+    <div className="divide-y divide-gray-300">
       {renderItems}
     </div>
   )

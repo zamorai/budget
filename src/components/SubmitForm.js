@@ -7,6 +7,7 @@ export default function SubmitForm() {
   const[description, setDescription] = useState("");
   const[value, setValue] = useState("");
   const[selection, setSelection] = useState("+")
+  const[wrongSubmit, setWrongSubmit] = useState(false)
 
   const dispatch = useDispatch();
 
@@ -14,7 +15,9 @@ export default function SubmitForm() {
     e.preventDefault()
     if (description.length >=2 && value.length > 0 && value * 1 != NaN && parseInt(value) > 0) {
       handleFormSubmit(e)
+      setWrongSubmit(false)
     }
+    setWrongSubmit(true)
 
   }
 
@@ -43,16 +46,20 @@ export default function SubmitForm() {
   return (
     <div className="flex justify-center items-center mt-12">
       <div>
-        <form onSubmit={handleFormValidation}>
-          <label className="mr-2">Add Item</label>
-          <input value={description} onChange={(e) => setDescription(e.target.value)} className="mr-4 bg-gray-100 px-2 py-1 rounded placeholder-gray-500 placeholder-opacity-50 outline-none" placeholder="Item" type='text' />
-          <label className="mr-2">Cost</label>
-          <input value={value} onChange={(e) => setValue(e.target.value)} className="mr-4 bg-gray-100 px-2 py-1 rounded placeholder-gray-500 placeholder-opacity-50 outline-none" type='text' placeholder="Cost" />
-          <select className="px-4 py-1 outline-none" onClick ={(e) => setSelection(e.target.value)} name="type">
+        <form className="flex" onSubmit={handleFormValidation}>
+          <div className="flex flex-col">
+            <label className="mr-2">Add Item</label>
+            <input value={description} onChange={(e) => setDescription(e.target.value)} className="mr-4 bg-gray-100 px-2 py-1 rounded placeholder-gray-500 placeholder-opacity-50 outline-none" placeholder="Item" type='text' />
+          </div>
+          <div className="flex flex-col">
+            <label className="mr-2">Cost</label>
+            <input value={value} onChange={(e) => setValue(e.target.value)} className="mr-4 bg-gray-100 px-2 py-1 rounded placeholder-gray-500 placeholder-opacity-50 outline-none" type='text' placeholder="Cost" />
+          </div>
+          <select className="px-4 py-1 outline-none self-end" onClick ={(e) => setSelection(e.target.value)} name="type">
             <option value ="+">+</option>
             <option value="-">-</option>
           </select>
-          <button className="ml-4 px-4 py-1 rounded bg-gradient-to-r from-teal-400 to-blue-400 focus:outline-none" type="submit">Add</button>
+          <button className="ml-4 px-4 py-1 rounded bg-gradient-to-r from-teal-400 to-blue-400 focus:outline-none self-end" type="submit">Add</button>
         </form>
       </div>
     </div>
