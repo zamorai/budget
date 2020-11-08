@@ -31,11 +31,11 @@ export default function SubmitForm() {
   const handleFormSubmit = (e) => {
    e.preventDefault()
   if (selection === "+") {    
-    dispatch(addItem({name: uppercasedDescription, price: parseInt(value), time: moment().format("MMM Do YY hh:mm:ss a") }))
+    dispatch(addItem({name: uppercasedDescription, price: parseInt(value), time: moment().format("MMM Do YYYY") }))
     dispatch(add(parseInt(value)));
     dispatch(addItemTotal(parseInt(value)))
   } else {
-    dispatch(addExpense({name: uppercasedDescription, price: parseInt(value), time: moment().format("MMM Do YY")}))
+    dispatch(addExpense({name: uppercasedDescription, price: parseInt(value), time: moment().format("MMM Do YYYY")}))
     dispatch(sub(parseInt(value))); 
     dispatch(addExpenseTotal(parseInt(value)))
   } 

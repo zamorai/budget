@@ -15,9 +15,9 @@ switch(action.type) {
     return state.filter(item => {
      return item.name !== action.payload
     })
-  case 'AMOUNT_FILTER':
+  case 'AMOUNT_FILTER': 
     let filteredState = [...state]
-    filteredState.sort(amountFilter)
+    filteredState.sort(amountFilterAsc)
     return filteredState
   default:
     return state;
@@ -26,7 +26,7 @@ switch(action.type) {
 
 export default ExpenseReducer;
 
-function amountFilter(a,b) {
+function amountFilterAsc(a,b) {
   if (a.price > b.price) {
     return -1
   } 

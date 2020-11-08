@@ -26,22 +26,9 @@ const IncomeReducer = (state = initalValues, action) => {
 
 export default IncomeReducer;
 
-// {
-//   name: "Uber",
-//   price: 1200
-// },
-// {
-// name: "Amazon",
-// price: 3200
-// }
 
 function amountFilter(a,b) {
   if (a.price > b.price) {
     return -1
   } 
-  if (a.price < b.price){ 
-    return 1
-  }
-
-  return 0
 }
