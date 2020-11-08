@@ -30,7 +30,7 @@ export default function SubmitForm() {
 
   const handleFormSubmit = (e) => {
    e.preventDefault()
-  if (selection == "+") {    
+  if (selection === "+") {    
     dispatch(addItem({name: uppercasedDescription, price: parseInt(value), time: moment().format("MMM Do YY hh:mm:ss a") }))
     dispatch(add(parseInt(value)));
     dispatch(addItemTotal(parseInt(value)))
