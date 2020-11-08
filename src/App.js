@@ -15,7 +15,7 @@ export default function App() {
 
 
   return (
-    <div className="bg-gray-200 min-h-screen">
+    <div className="bg-gray-200 pb-4 min-h-screen">
       <Header/>
       <TotalCounter />
       <DataForm />
