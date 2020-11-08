@@ -16,3 +16,85 @@
       transform: rotate(360deg);
   }
 }
+
+.custom-height{
+  height: 45vh;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scroll{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.custom-scroll_icon{
+  position: absolute;
+  right: 12.5rem;
+  top: 45%; 
+}
+
+
+
+.custom-left{
+  margin-left: 5.5px;
+}
+
+.custom-dot-1{
+  animation: down;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+}
+
+.custom-dot-2{
+  animation: down;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+  animation-delay: 0.1s;
+}
+
+.custom-dot-3{
+  animation: down;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.custom-arrow{
+  animation: down;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+  animation-delay: 0.5s;
+}
+
+
+@keyframes pulse{
+  0% {
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes down{
+  0%{
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+}

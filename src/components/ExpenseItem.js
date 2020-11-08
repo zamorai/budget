@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteExpense, add, subExpenseTotal } from '../actions';
-import moment from 'moment';
+
 
 export default function IncomeItem(props) {
   const dispatch = useDispatch();

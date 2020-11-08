@@ -12,7 +12,7 @@ export default function ExpenseList() {
   })
 
   return (
-    <div>
+    <div className="divide-y divide-blue-100">
       {renderItems}
     </div>
   )

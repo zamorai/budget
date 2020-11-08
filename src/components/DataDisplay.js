@@ -12,19 +12,19 @@ export default function DataDisplay() {
 
   return (
     <div className="flex flex-col justify-center items-center mt-8">
-      <div className="ml-6 flex w-3/4">
+      <div className="ml-6 flex items-center w-3/4">
         <img className="w-5 h-5 mr-6" src="./images/filter-outline.svg"/> 
-        <span>Filters</span>
-        <div>
-          <span className="cursor-pointer text-red-500">Date</span>
-          <span onClick={() => dispatch(amountFilter())} className="cursor-pointer text-blue-500">Amount</span>
+        <span>Sort by:</span>
+        <div className="ml-4">
+          <span className="cursor-pointer text-gray-800">Date</span>
+          <span onClick={() => dispatch(amountFilter())} className="cursor-pointer text-gray-800 ml-4">Amount</span>
         </div>
       </div>
-      <div className="w-3/4 bg-gray-100 shadow grid grid-cols-2 divide-x divide-gray-300 mt-2">
+      <div className="w-3/4 bg-gray-100 shadow grid grid-cols-2 divide-x divide-gray-300 mt-2 custom-height rounded overflow-y-scroll custom-scroll"> 
         <div className='mt-2'>
-          <div className="flex justify-between">
+          <div className="flex justify-between sticky"> 
             <span></span>
-            <span className="ml-6">Income</span>
+            <span className="ml-6 border-b border-gray-800">Income</span>
             <span className="text-green-500 mr-4 font-light">${incomeMoney}</span>
           </div>
 
@@ -35,7 +35,7 @@ export default function DataDisplay() {
         <div className="mt-2">
           <div className="flex justify-between">
             <span className="ml-4 text-red-500 font-light">${expenseMoney}</span>
-            <span className="mr-6">Expense</span>
+            <span className="mr-6 border-b border-gray-800">Expense</span>
             <span></span>
           </div>
           

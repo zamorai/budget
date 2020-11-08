@@ -6,6 +6,8 @@ import Header from './components/Header';
 import TotalCounter from './components/TotalCounter';
 import DataForm from './components/SubmitForm';
 import DataDisplay from './components/DataDisplay';
+import Graphs from './components/Graphs';
+import SupportIcons from './components/SupportIcons'
 
 export default function App() {
   // const count = useSelector(state => state.test);
@@ -18,6 +20,8 @@ export default function App() {
       <TotalCounter />
       <DataForm />
       <DataDisplay />
+      <Graphs />
+      <SupportIcons />
     </div>
   )
 }

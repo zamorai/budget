@@ -15,7 +15,19 @@ switch(action.type) {
     return state.filter(item => {
      return item.name !== action.payload
     })
+  case 'AMOUNT_FILTER':
+    let filteredState = [...state]
+    filteredState.sort(amountFilter)
+    return filteredState
   default:
     return state;
 }
+}
+
+
+
+function amountFilter(a,b) {
+  if (a.price > b.price) {
+    return -1
+  } 
 }
